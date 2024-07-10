@@ -34,7 +34,7 @@ echo "files available at /home/runner/work/using/using/"
 ls /home/runner/work/using/using/
 echo "----"
 echo "cat package-lock.json"
-cat /home/runner/work/using/using/package-lock.json
+cat package-lock.json
 echo "----"
 echo "lock_file: $lock_file"
 echo "cat lock_file"
