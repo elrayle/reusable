@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v4.1.1
         with:
           repository: 'elrayle/reusable'
-          ref: 'v1.0.0-rc4'
+          ref: 'v1.0.0-rc5'
           path: 'reusable'
 
       - name: Get version from package-lock.json
@@ -40,6 +40,6 @@ jobs:
             ${{ inputs.deploy-env }} \
             ${{ inputs.is-release }} \
             ${{ inputs.tag-name }} \
-            ${{ github.sha }})
+            ${{ github.sha }}) || echo "Error: $version_log"
           echo "version_log=$version_log"
           echo "VERSION=$(version_log | tail -n)" >> $GITHUB_ENV
