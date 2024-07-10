@@ -28,6 +28,8 @@ echo "sha: $sha"
 echo "rootdir: $rootdir"
 echo lock_file="$5/package-lock.json"
 
+ls /home/runner/work/using/using/
+
 version='v'$(jq -r '.version' $lock_file) # e.g. v1.2.0
 echo "version: $version"
 
