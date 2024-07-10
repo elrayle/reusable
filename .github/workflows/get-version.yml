@@ -30,4 +30,5 @@ jobs:
         shell: bash
         run: |
           version=$(./reusable/scripts/app-workflows/get-version.sh ${{ inputs.deploy-env }} ${{ inputs.is-release }} ${{ inputs.tag-name }} ${{ github.sha }})
+          echo "version=$version"
           echo "VERSION=$version" >> $GITHUB_ENV
