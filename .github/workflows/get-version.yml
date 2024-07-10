@@ -21,7 +21,7 @@ jobs:
       version: ${{ env.VERSION }}
     steps:
       - name: Download repository
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: package-lock.json
           path: .
