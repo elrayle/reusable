@@ -10,17 +10,13 @@
 # Outputs
 #   version: the version of the package to deploy (e.g. v1.2.0, v1.2.0-dev-1234567890)
 
-echo "*** Entering get-version.sh -> inputs -> deploy_env: $1, is_release: $2, release_tag: $3, sha: $4, rootdir: $5"
-
-# ROOT_DIR=$(git rev-parse --show-toplevel)
-# echo "ROOT_DIR: $ROOT_DIR"
+echo "*** Entering get-version.sh -> inputs -> deploy_env: $1, is_release: $2, release_tag: $3, sha: $4, lock_file: $5"
 
 deploy_env="$1"
 is_release="$2"
 release_tag="$3"
 sha="$4"
-rootdir="$5"
-lock_file="$5/package-lock.json"
+lock_file="${5:-package-lock.json}"
 
 echo "deploy_env: $deploy_env"
 echo "is_release: $is_release"
@@ -29,14 +25,8 @@ echo "sha: $sha"
 echo "rootdir: $rootdir"
 echo "lock_file: $lock_file"
 
+
 echo "----"
-echo "files available at /home/runner/work/using/using/"
-ls /home/runner/work/using/using/
-echo "----"
-echo "cat package-lock.json"
-cat package-lock.json
-echo "----"
-echo "lock_file: $lock_file"
 echo "cat lock_file"
 cat $lock_file
 echo "----"
