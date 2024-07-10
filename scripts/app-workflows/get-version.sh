@@ -29,7 +29,7 @@ elif [[ "$deploy_env" == 'dev' ]]; then
   short_sha=$(echo "$sha" | cut -c 1-10)
   version=$version'-dev-'$short_sha       # e.g. v1.2.0-dev-1234567890
 else
-  echo "Invalid deploy environment: $deploy_env. Must be 'dev' or 'prod'"
+  echo "ERROR: Invalid deploy environment: $deploy_env. Must be 'dev' or 'prod'" >&2
   exit 1
 fi
 
