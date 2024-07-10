@@ -44,7 +44,7 @@ jobs:
           echo -e "---- script log\n$version_log\n----"; \
           version=$(echo "$version_log" | tail -n 1); \
           echo "version: $version"; \
-          echo "VERSION=$(version_log | tail -n 1)" >> $GITHUB_ENV
+          echo "VERSION=$version" >> $GITHUB_ENV
 
       - name: echo version
         run: |
