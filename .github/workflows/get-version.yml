@@ -29,16 +29,17 @@ jobs:
       - uses: actions/checkout@v4.1.1
         with:
           repository: 'elrayle/reusable'
+          # ref: 'v1.0.0-rc6'
           path: 'reusable'
 
       - name: Get version from package-lock.json
         id: get_version
         shell: bash
         run: |
-          version=$(./reusable/scripts/app-workflows/get-version.sh \
+          version_log=$(./reusable/scripts/app-workflows/get-version.sh \
             ${{ inputs.deploy-env }} \
             ${{ inputs.is-release }} \
             ${{ inputs.tag-name }} \
-            ${{ github.sha }} | tail -n 1)
-          echo "version=$version"
-          echo "VERSION=$version" >> $GITHUB_ENV
+            ${{ github.sha }}) || (echo "$version_log" && exit 1)
+          echo "version_log=\n$version_log\n----"
+          echo "VERSION=$(version_log | tail -n)" >> $GITHUB_ENV
