@@ -20,16 +20,16 @@ jobs:
     outputs:
       version: ${{ env.VERSION }}
     steps:
-      - name: Download repository
+      - name: Download package-lock.json
         uses: actions/download-artifact@v4
         with:
           name: package-lock.json
           path: .
 
-      - uses: actions/checkout@v4.1.1
-        with:
-          repository: 'elrayle/reusable'
-          path: 'reusable'
+    #   - uses: actions/checkout@v4.1.1
+    #     with:
+    #       repository: 'elrayle/reusable'
+    #       path: 'reusable'
 
       - name: Get version from package-lock.json
         id: get_version
