@@ -42,4 +42,4 @@ jobs:
             ${{ inputs.tag-name }} \
             ${{ github.sha }})
           echo "version_log=$version_log"
-          echo "VERSION=$version_log | tail -n" >> $GITHUB_ENV
+          echo "VERSION=$(version_log | tail -n)" >> $GITHUB_ENV

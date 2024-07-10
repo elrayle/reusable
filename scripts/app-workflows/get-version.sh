@@ -33,5 +33,5 @@ else
   exit 1
 fi
 
-echo "RC1: get-version.sh -> outputs -> version: $version"
+echo "RC3: get-version.sh -> outputs -> version: $version"
 echo "$version"
