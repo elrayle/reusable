@@ -23,7 +23,7 @@ jobs:
       - name: Download repository
         uses: actions/download-artifact@v2
         with:
-          name: package-lock
+          name: package-lock.json
           path: .
 
       - uses: actions/checkout@v4.1.1
