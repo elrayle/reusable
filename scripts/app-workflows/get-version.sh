@@ -10,31 +10,13 @@
 # Outputs
 #   version: the version of the package to deploy (e.g. v1.2.0, v1.2.0-dev-1234567890)
 
-echo "*** Entering get-version.sh -> inputs -> deploy_env: $1, is_release: $2, release_tag: $3, sha: $4, lock_file: $5"
-
 deploy_env="$1"
 is_release="$2"
 release_tag="$3"
 sha="$4"
 lock_file="${5:-package-lock.json}"
 
-echo "deploy_env: $deploy_env"
-echo "is_release: $is_release"
-echo "release_tag: $release_tag"
-echo "sha: $sha"
-echo "rootdir: $rootdir"
-echo "lock_file: $lock_file"
-
-
-echo "----"
-echo "cat lock_file"
-cat $lock_file
-echo "----"
-
-
 version='v'$(jq -r '.version' $lock_file) # e.g. v1.2.0
-echo "version: $version"
-
 if [[ "$deploy_env" == 'prod' ]]; then
   if [[ "$is_release" == 'true' ]]; then
     # validate the version when triggered by a release
