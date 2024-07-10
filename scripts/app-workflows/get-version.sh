@@ -35,6 +35,7 @@ echo "----"
 echo "cat package-lock.json"
 cat /home/runner/work/using/using/package-lock.json
 echo "----"
+echo "lock_file: $lock_file"
 echo "cat lock_file"
 cat $lock_file
 echo "----"
