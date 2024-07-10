@@ -41,5 +41,5 @@ jobs:
             ${{ inputs.is-release }} \
             ${{ inputs.tag-name }} \
             ${{ github.sha }}) || (echo "$version_log" && exit 1)
-          echo -e "version_log=\n$version_log\n----"
+          echo -e "---- script log\n$version_log\n----"
           echo "VERSION=$(version_log | tail -n)" >> $GITHUB_ENV
