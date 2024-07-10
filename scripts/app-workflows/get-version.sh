@@ -15,11 +15,11 @@ echo "*** Entering get-version.sh -> inputs -> deploy_env: $1, is_release: $2, r
 # ROOT_DIR=$(git rev-parse --show-toplevel)
 # echo "ROOT_DIR: $ROOT_DIR"
 
-deploy_env="$1"
-is_release="$2"
-release_tag="$3"
-sha="$4"
-rootdir="$5"
+local deploy_env="$1"
+local is_release="$2"
+local release_tag="$3"
+local sha="$4"
+local rootdir="$5"
 
 echo "deploy_env: $deploy_env"
 echo "is_release: $is_release"
