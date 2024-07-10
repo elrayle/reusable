@@ -47,4 +47,9 @@ jobs:
           echo "VERSION=$(version_log | tail -n 1)" >> $GITHUB_ENV
 
       - name: echo version
-        run: echo ${{ env.VERSION }}
+        run: |
+          echo ${{ env.VERSION }}
+          if [ -z "${{ env.VERSION }}" ]; then
+            echo "VERSION is empty"
+            exit 1
+          fi
