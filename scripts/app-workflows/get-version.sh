@@ -32,6 +32,9 @@ echo "----"
 echo "files available at /home/runner/work/using/using/"
 ls /home/runner/work/using/using/
 echo "----"
+echo "cat package-lock.json"
+cat /home/runner/work/using/using/package-lock.json
+echo "----"
 
 
 version='v'$(jq -r '.version' $lock_file) # e.g. v1.2.0
