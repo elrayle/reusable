@@ -35,6 +35,9 @@ echo "----"
 echo "cat package-lock.json"
 cat /home/runner/work/using/using/package-lock.json
 echo "----"
+echo "cat lock_file"
+cat $lock_file
+echo "----"
 
 
 version='v'$(jq -r '.version' $lock_file) # e.g. v1.2.0
