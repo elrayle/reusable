@@ -49,3 +49,5 @@ echo lock_file="$5/package-lock.json"
 
 # echo "get-version.sh -> outputs -> version: $version"
 # echo "$version"
+
+echo "--- Leaving get-version.sh -> outputs -> version: $version"
