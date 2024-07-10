@@ -26,10 +26,10 @@ jobs:
           name: package-lock.json
           path: .
 
-    #   - uses: actions/checkout@v4.1.1
-    #     with:
-    #       repository: 'elrayle/reusable'
-    #       path: 'reusable'
+      - uses: actions/checkout@v4.1.1
+        with:
+          repository: 'elrayle/reusable'
+          path: 'reusable'
 
       - name: Get version from package-lock.json
         id: get_version
