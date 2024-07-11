@@ -12,6 +12,9 @@ on:
       tag-name:
         required: true
         type: string
+      test-quotes:
+        required: false
+        type: string
 
 jobs:
   get-version:
@@ -52,3 +55,4 @@ jobs:
             echo "VERSION is empty"
             exit 1
           fi
+          echo ${{ inputs.test-quotes }}
